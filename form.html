@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form </title>
+    <style>
+        body{
+              text-align: center; font-family: sans-serif;
+               } 
+        h1{font-size: 20px;
+             }          
+        table tr td {
+    padding-top: 6px;
+    padding-bottom: 6px;
+        } 
+        fieldset{
+            width:500px; text-align: center
+        }
+        
+    </style>
+    <script>
+        function Register(){
+        fn=frm.fname.value;
+        for(x in fn){
+            ch=fn.charCodeAt(x);
+             if(ch<65||ch>90 && ch<97||ch>122)
+                 {
+                 alert("Invalid Participantname");
+                 return false;
+                 }
+        }
+
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <h1> Registration Form For Conference</h1>
+    <form name="frm" method="post" onsubmit="return Register()" action="success.html" >
+        <fieldset>
+            <table >
+                <tr> <td> Name :</td><td> <input type="text" name="fname" value="" size="50" required/></td></tr>
+                <tr> <td> Email :</td> <td><input type="text" name="email" value=" " size="50" required/></td></tr>
+                <tr> <td> Phone:</td><td><input type="number" name="phone" value="" size="50 " required/></td> </tr>
+                <tr> <td> Affilation :</td><td> <input type="text" name ="Aff" value="" size="50" required/></td></tr>
+                <tr>
+                    <td>  preferences:</td>
+                    <td>
+                    <input type="checkbox" value="vegetarian" checked>vegetarian
+                    <input type="checkbox" value="vegan">vegan
+                    <input type="checkbox" value="gulten-free">gulten-free
+                    </td>
+                </tr>
+                <tr>
+                    <td> Registration:</td>
+                    <td>
+                        <input type="radio" name="General-Attendee" value=""> General-Attendee
+                        <input type="radio" name="Student" value="">Student
+                        <input type="radio" name="VIP" value=""> VIP 
+                    </td>
+                </tr>
+    
+    
+            </table>
+        </fieldset>
+
+        <input type="submit" value="SUBMIT" name="submit" />
+
+    </form>
+    </center>
+</body>
+</html>
